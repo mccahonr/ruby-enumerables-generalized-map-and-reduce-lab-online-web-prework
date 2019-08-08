@@ -9,10 +9,6 @@ def map(source_array)
 end
 
 def reduce(source_array, starting_point = 0)
-  i = 0
-  total = starting_point
-  while i < source_array.length do
-    new_total = total + yield(source_array[i])
-  end
-  return new_total
+  source_array.length.times do |i|
+    starting_point = yield(starting_point, source_array[i])
 end
