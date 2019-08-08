@@ -7,3 +7,11 @@ def map(source_array)
   end
   return new
 end
+
+def reduce(source_array)
+  i = 0
+  while i < source_array.length do
+    total = total + yield(source_array[i])
+  end
+  return total
+end
